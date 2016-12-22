@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C186E568-E1F5-414E-9AFA-4A2EA50C248B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaxyToAir_TestHarness</RootNamespace>
+    <AssemblyName>GalaxyToAir_TestHarness</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Romy\Publish\TestHarness\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\lvfile2\#LVFILE2\Projects\test\romytest\TestHarness\</InstallUrl>
+    <ProductName>Air To Galaxy Test Harness</ProductName>
+    <SuiteName>Air To Galaxy Test Harness</SuiteName>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>1.0.0.8</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9768428C97748A2E10B495F2E750597F0202BAEB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GalaxyToAir_TestHarness_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\..\..\Vipin\Projects_SVN\Pheonix\src\packages\MvvmLightLibs.5.2.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\..\..\..\Vipin\Projects_SVN\Pheonix\src\packages\MvvmLightLibs.5.2.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\..\..\..\Vipin\Projects_SVN\Pheonix\src\packages\MvvmLightLibs.5.2.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BusinessModel\AddToOrderRequestModel.cs" />
+    <Compile Include="BusinessModel\AddToOrderResponseModel.cs" />
+    <Compile Include="BusinessModel\AirFareRuleRequestModel.cs" />
+    <Compile Include="BusinessModel\AirFareRuleResponseModel.cs" />
+    <Compile Include="BusinessModel\Airport.cs" />
+    <Compile Include="BusinessModel\BookingRequestModel.cs" />
+    <Compile Include="BusinessModel\BookingResponseModel.cs" />
+    <Compile Include="BusinessModel\Country.cs" />
+    <Compile Include="BusinessModel\Currency.cs" />
+    <Compile Include="BusinessModel\Customers.cs" />
+    <Compile Include="BusinessModel\FlightSearchRequestModel.cs" />
+    <Compile Include="BusinessModel\FlightSearchResponseModel.cs" />
+    <Compile Include="BusinessModel\InsuranceSearchModel.cs" />
+    <Compile Include="BusinessModel\InsuranceSearchResponseModel.cs" />
+    <Compile Include="BusinessModel\PostBookingFareRuleRequestModel.cs" />
+    <Compile Include="BusinessModel\PostBookingFareRuleResponseModel.cs" />
+    <Compile Include="BusinessModel\Suppliers.cs" />
+    <Compile Include="BusinessModel\VehicleRentalConditionRequestModel.cs" />
+    <Compile Include="BusinessModel\VehicleRentalConditionResponseModel.cs" />
+    <Compile Include="BusinessModel\VehicleSearchRequestModel.cs" />
+    <Compile Include="BusinessModel\VehicleSearchResponseModel.cs" />
+    <Compile Include="Model\AddToCartRequestModel.cs" />
+    <Compile Include="Model\AddToCartResponseModel.cs" />
+    <Compile Include="Model\AirFareRuleRequestModel.cs" />
+    <Compile Include="Model\AirFareRuleResponseModel.cs" />
+    <Compile Include="Model\BookingRequestModel.cs" />
+    <Compile Include="Model\BookingResponseModel.cs" />
+    <Compile Include="Model\Class1.cs" />
+    <Compile Include="Model\FlightSearchResponseModel.cs" />
+    <Compile Include="Model\FlightSearchRequestModel.cs" />
+    <Compile Include="Model\GetAirportResponseModel.cs" />
+    <Compile Include="Model\GetCountryResponseModel.cs" />
+    <Compile Include="Model\GetCurrencyResponseModel.cs" />
+    <Compile Include="Model\InsuranceSearchRequestModel.cs" />
+    <Compile Include="Model\InsuranceSearchResponseModel.cs" />
+    <Compile Include="Model\OrderDetailsRequestModel.cs" />
+    <Compile Include="Model\OrderDetailsResponseModel.cs" />
+    <Compile Include="Model\PostBookingFareRuleRequestModel.cs" />
+    <Compile Include="Model\PostBookingFareRuleResponseModel.cs" />
+    <Compile Include="Model\RetrieveBookingRequestModel.cs" />
+    <Compile Include="Model\RetrieveBookingResponseModel.cs" />
+    <Compile Include="Model\VehicleRentalConditionRequestModel.cs" />
+    <Compile Include="Model\VehicleRentalConditionResponseModel.cs" />
+    <Compile Include="Model\VehicleSearchRequestModel.cs" />
+    <Compile Include="Model\VehicleSearchResponseModel.cs" />
+    <Compile Include="Services\BookingService.cs" />
+    <Compile Include="Services\FlightService.cs" />
+    <Compile Include="Services\IBookingService.cs" />
+    <Compile Include="Services\IFlightService.cs" />
+    <Compile Include="Services\IInsuranceService.cs" />
+    <Compile Include="Services\IMasterService.cs" />
+    <Compile Include="Services\InsuranceService.cs" />
+    <Compile Include="Services\IOrderService.cs" />
+    <Compile Include="Services\IVehicleService.cs" />
+    <Compile Include="Services\MasterService.cs" />
+    <Compile Include="Services\OrderService.cs" />
+    <Compile Include="Services\VehicleService.cs" />
+    <Compile Include="TemplateSelectors\JPropertyDataTemplateSelector.cs" />
+    <Compile Include="Util\HttpMethod.cs" />
+    <Compile Include="Util\ServiceTypes.cs" />
+    <Compile Include="Util\PageNavigation.cs" />
+    <Compile Include="Util\ServiceBridge.cs" />
+    <Compile Include="Util\SingelOrArrayConverter.cs" />
+    <Compile Include="Util\UIHelper.cs" />
+    <Compile Include="ValueConverters\ComplexPropertyMethodToValueConverter.cs" />
+    <Compile Include="ValueConverters\JArrayLengthConverter.cs" />
+    <Compile Include="ValueConverters\JPropertyTypeToColorConverter.cs" />
+    <Compile Include="ValueConverters\JValueConverter.cs" />
+    <Compile Include="ValueConverters\JValueTypeToColorConverter.cs" />
+    <Compile Include="ValueConverters\MethodToValueConverter.cs" />
+    <Compile Include="ViewModel\FareRulesViewModel.cs" />
+    <Compile Include="ViewModel\BookingDetailsViewModel.cs" />
+    <Compile Include="ViewModel\FlightSearchViewModel.cs" />
+    <Compile Include="ViewModel\InsuranceSearchViewModel.cs" />
+    <Compile Include="ViewModel\LandingPageViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\NavigationViewModel.cs" />
+    <Compile Include="ViewModel\OrderDetailsViewModel.cs" />
+    <Compile Include="ViewModel\VehicleSearchViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\FareRulesView.xaml.cs">
+      <DependentUpon>FareRulesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DataView.xaml.cs">
+      <DependentUpon>DataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BookingDetailsView.xaml.cs">
+      <DependentUpon>BookingDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\JsonViewer.xaml.cs">
+      <DependentUpon>JsonViewer.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\OrderDetailsView.xaml.cs">
+      <DependentUpon>OrderDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LandingPageView.xaml.cs">
+      <DependentUpon>LandingPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FlightSearchView.xaml.cs">
+      <DependentUpon>FlightSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsuranceSearchView.xaml.cs">
+      <DependentUpon>InsuranceSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VehicleSearchView.xaml.cs">
+      <DependentUpon>VehicleSearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\XMLViewer.xaml.cs">
+      <DependentUpon>XMLViewer.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Skins\MainSkin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FareRulesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BookingDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\JsonViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\LandingPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FlightSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\InsuranceSearchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\VehicleSearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\XMLViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <Content Include="App_Data\country.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\currency.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\airport.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\suppliers.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\customers.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="GalaxyToAir_TestHarness_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IBS_Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="GalaxyToAir_TestHarness.exe.config">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Design\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

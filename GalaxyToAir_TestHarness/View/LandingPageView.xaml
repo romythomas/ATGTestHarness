@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="GalaxyToAir_TestHarness.View.LandingPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContext="{Binding LandingPage, Source={StaticResource Locator}}">
+    <Grid x:Name="LayoutRoot" Margin="239,-388,-909,-11" Height="699" VerticalAlignment="Bottom">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="111*"/>
+            <ColumnDefinition Width="83*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Air To Galaxy Test Harness" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="415" FontSize="36" Foreground="#FF0F405E" FontFamily="Impact" Grid.ColumnSpan="2" Margin="330,108,0,0"/>
+        <Label Content="Base Url:" HorizontalAlignment="Left" Margin="388,195,0,0" VerticalAlignment="Top" Width="68"/>
+        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="467,198,0,0" TextWrapping="Wrap" Text="{Binding baseUrl}" VerticalAlignment="Top" Width="263"/>
+        <Label Content="User ID:" HorizontalAlignment="Left" Margin="388,227,0,0" VerticalAlignment="Top" Width="68"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="467,230,0,0" TextWrapping="Wrap" Text="{Binding userId}" VerticalAlignment="Top" Width="108" Grid.ColumnSpan="2"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="388,260,0,0" VerticalAlignment="Top" Width="68"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="467,263,0,0" TextWrapping="Wrap" Text="{Binding password}" VerticalAlignment="Top" Width="108" Grid.ColumnSpan="2"/>
+        <Button Content="Update Details" HorizontalAlignment="Left" Margin="467,334,0,0" VerticalAlignment="Top" Width="93" Command="{Binding UpdateClick}" Grid.ColumnSpan="2"/>
+        <GroupBox Header="Configurations" HorizontalAlignment="Left" Height="203" Margin="330,162,0,0" VerticalAlignment="Top" Width="431" Grid.ColumnSpan="2">
+            <Grid Margin="183,100,-183,-100">
+            </Grid>
+        </GroupBox>
+        <Image HorizontalAlignment="Left" Height="100" Margin="214,87,0,0" VerticalAlignment="Top" Width="100" Source="/GalaxyToAir_TestHarness;component/Images/IBS_Logo.jpg"/>
+        <Label Content="Profile For Payment:" HorizontalAlignment="Left" Margin="341,296,0,0" VerticalAlignment="Top" Width="115"/>
+        <ComboBox HorizontalAlignment="Left" Margin="467,296,0,0" VerticalAlignment="Top" Width="108" Text="{Binding target}" Grid.ColumnSpan="2" IsEditable="True">
+            <ComboBoxItem Content="Production"/>
+            <ComboBoxItem Content="Test"/>
+        </ComboBox>
+    </Grid>
+</UserControl>

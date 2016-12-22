@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="GalaxyToAir_TestHarness.View.DataView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Margin="-123,0,-470,-25">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="61*"/>
+        </Grid.RowDefinitions>
+        <TextBox HorizontalAlignment="Left" Height="220" Margin="24,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="405" Text="{Binding Path=jsonRequest}" Grid.RowSpan="2" IsReadOnly="True"/>
+        <TextBox HorizontalAlignment="Left" Height="220" Margin="450,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="399" Text="{Binding Path=jsonResponse}" Grid.RowSpan="2" IsReadOnly="True"/>
+        <Label Content="Request" HorizontalAlignment="Left" Height="27" Margin="24,10,0,0" VerticalAlignment="Top" Width="101"/>
+        <Label Content="Response" HorizontalAlignment="Left" Height="27" Margin="450,10,0,0" VerticalAlignment="Top" Width="101"/>
+    </Grid>
+</UserControl>

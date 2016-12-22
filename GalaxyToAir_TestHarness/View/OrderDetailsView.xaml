@@ -1,0 +1,113 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GalaxyToAir_TestHarness.View" xmlns:JsonViewer="clr-namespace:JsonViewerDemo.JsonViewer" x:Class="GalaxyToAir_TestHarness.View.OrderDetailsView" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+            DataContext="{Binding OrderDetails, Source={StaticResource Locator}}">
+    <UserControl.Resources>
+        <DataTemplate x:Key="RowDetailTemplate">
+            <Grid x:Name="RowDetailGrid">
+                <Grid>
+                    <Label Content="Suffix:" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="57,16,0,0" VerticalAlignment="Top" Width="48" Text="{Binding prefix}" TabIndex="1" IsEditable="True">
+                        <ComboBoxItem Content="Mr."/>
+                        <ComboBoxItem Content="Mrs."/>
+                    </ComboBox>
+                    <Label Content="First Name:" HorizontalAlignment="Left" Margin="148,14,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="223,17,0,0" TextWrapping="Wrap" Text="{Binding firstName}" VerticalAlignment="Top" Width="150" TabIndex="2"/>
+                    <Label Content="Middle Name:" HorizontalAlignment="Left" Margin="406,14,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="490,17,0,0" TextWrapping="Wrap" Text="{Binding middleName}" VerticalAlignment="Top" Width="153" RenderTransformOrigin="0.617,0.565" TabIndex="3"/>
+                    <Label Content="Sur Name:" HorizontalAlignment="Left" Margin="683,14,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="753,17,0,0" TextWrapping="Wrap" Text="{Binding lastName}" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.617,0.565" TabIndex="4"/>
+                    <Label Content="Country:" HorizontalAlignment="Left" Margin="984,10,0,0" VerticalAlignment="Top"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="1042,14,0,0" VerticalAlignment="Top" Width="189" RenderTransformOrigin="0.854,0.5"
+					IsEditable="True"
+					ItemsSource="{Binding Path=DataContext.lstCountry, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"
+					DisplayMemberPath="name"
+					SelectedValuePath="code"
+					SelectedValue="{Binding country}" TabIndex="5"/>
+                    <Label Content="DOB:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
+                    <DatePicker HorizontalAlignment="Left" Margin="57,52,0,0" VerticalAlignment="Top" Width="109" SelectedDate="{Binding dateOfBirth}" TabIndex="6"/>
+                    <Label Content="Gender:" HorizontalAlignment="Left" Margin="228,50,0,0" VerticalAlignment="Top"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="284,52,0,0" VerticalAlignment="Top" Width="87" Text="{Binding gender}" TabIndex="7" IsEditable="True">
+                        <ComboBoxItem Content="Male"/>
+                        <ComboBoxItem Content="Female"/>
+                    </ComboBox>
+                    <Label Content="Street:" HorizontalAlignment="Left" Margin="406,50,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="490,53,0,0" TextWrapping="Wrap" Text="{Binding street}" VerticalAlignment="Top" Width="153" TabIndex="8"/>
+                    <Label Content="City:" HorizontalAlignment="Left" Margin="984,48,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="1042,50,0,0" TextWrapping="Wrap" Text="{Binding city}" VerticalAlignment="Top" Width="189" TabIndex="10"/>
+                    <Label Content="Apt:" HorizontalAlignment="Left" Margin="694,49,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="757,51,0,0" TextWrapping="Wrap" Text="{Binding apartment}" VerticalAlignment="Top" Width="152" TabIndex="9"/>
+                    <Label Content="State:" HorizontalAlignment="Left" Margin="13,89,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="57,91,0,0" TextWrapping="Wrap" Text="{Binding state}" VerticalAlignment="Top" Width="86" RenderTransformOrigin="0.117,0.87" TabIndex="11"/>
+                    <Label Content="Zip:" HorizontalAlignment="Left" Margin="228,89,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="284,91,0,0" TextWrapping="Wrap" Text="{Binding zip}" VerticalAlignment="Top" Width="87" RenderTransformOrigin="0.117,0.87" TabIndex="12"/>
+                    <Label Content="Email:" HorizontalAlignment="Left" Margin="406,89,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="490,91,0,0" TextWrapping="Wrap" Text="{Binding email}" VerticalAlignment="Top" Width="153" RenderTransformOrigin="0.117,0.87" TabIndex="13"/>
+                    <Label Content="Phone:" HorizontalAlignment="Left" Margin="823,89,0,0" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="906,91,0,0" TextWrapping="Wrap" Text="{Binding phoneNo}" VerticalAlignment="Top" Width="117" RenderTransformOrigin="0.117,0.87" TabIndex="15"/>
+                    <TextBox HorizontalAlignment="Left" Height="23" Margin="870,91,0,0" TextWrapping="Wrap" Text="{Binding countryCode}" VerticalAlignment="Top" Width="31" RenderTransformOrigin="0.117,0.87" TabIndex="14"/>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid Margin="0,0,-1100,-511">
+        <GroupBox Header="Personal Details" HorizontalAlignment="Left" Height="280" Margin="47,24,0,0" VerticalAlignment="Top" Width="1317">
+            <Grid HorizontalAlignment="Left" Margin="10,0,0,0" Width="1287">
+                <DataGrid HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Height="221" RenderTransformOrigin="0.5,0.5" Width="1266" ItemsSource="{Binding paxData}" AutoGenerateColumns="False" RowDetailsTemplate="{StaticResource RowDetailTemplate}" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="" Binding="{Binding customerIndex}" Width="1285" FontWeight="Bold"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Content="Confirm Order" HorizontalAlignment="Left" Margin="1173,233,0,0" VerticalAlignment="Top" Width="103" Command="{Binding confirmOrder}" TabIndex="16"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Output" HorizontalAlignment="Left" Height="498" Margin="48,304,0,0" VerticalAlignment="Top" Width="1316">
+            <TabControl HorizontalAlignment="Left" Height="464" Margin="10,10,0,0" VerticalAlignment="Top" Width="1287">
+                <TabItem Header="Data">
+                    <Grid>
+                        <GroupBox Header="Order Info" HorizontalAlignment="Left" Margin="6,11,0,10" Width="1261">
+                            <Grid HorizontalAlignment="Left" Height="378" Margin="10,0,0,0" VerticalAlignment="Top" Width="1230">
+                                <Label Content="Order ID:" HorizontalAlignment="Left" Margin="523,8,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                                <Label Content="{Binding orderData.orderId}" HorizontalAlignment="Left" Margin="588,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.423" Width="80" Height="26" FontWeight="Bold" />
+                                <Label Content="Vehicle Order Id:" HorizontalAlignment="Left" Margin="153,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.362,0.5"/>
+                                <Label Content="{Binding orderData.vehicleQuoteId}" HorizontalAlignment="Left" Margin="275,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.423" Width="127" Height="26" />
+                                <Label Content="Price:" HorizontalAlignment="Left" Margin="855,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.362,0.5"/>
+                                <Label Content="{Binding orderData.vehicletotalPrice}" HorizontalAlignment="Left" Margin="907,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.423" Width="101" Height="26" />
+                                <Label Content="Air Order Id:" HorizontalAlignment="Left" Margin="153,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.362,0.5"/>
+                                <Label Content="{Binding orderData.airQuoteId}" HorizontalAlignment="Left" Margin="275,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.423" Width="127" Height="26" />
+                                <Label Content="{Binding insuranceData.totalPremiumAmount}" HorizontalAlignment="Left" Margin="786,81,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.423" Width="80" Height="26" FontWeight="Bold" />
+                                <Label Content="Price:" HorizontalAlignment="Left" Margin="855,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.362,0.5"/>
+                                <Label Content="{Binding orderData.airtotalPrice}" HorizontalAlignment="Left" Margin="907,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.423" Width="101" Height="26" />
+                                <Label Content="Insurance Order Id:" HorizontalAlignment="Left" Margin="153,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.362,0.5"/>
+                                <Label Content="{Binding orderData.insuranceQuoteId}" HorizontalAlignment="Left" Margin="275,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.423" Width="127" Height="26" />
+                                <Label Content="Price:" HorizontalAlignment="Left" Margin="855,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.362,0.5"/>
+                                <Label Content="{Binding orderData.insuranceTotalPrice}" HorizontalAlignment="Left" Margin="907,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,-0.423" Width="101" Height="26" />
+                                <Button Content="Fare Rule" HorizontalAlignment="Left" Margin="1062,76,0,0" VerticalAlignment="Top" Width="100" Command="{Binding viewFareRule}"/>
+                                <Button Content="Rental Condition" HorizontalAlignment="Left" Margin="1062,49,0,0" VerticalAlignment="Top" Width="100" Command="{Binding viewRentalCondition}"/>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="JSON">
+                    <Grid Background="#FFE5E5E5">
+                        <JsonViewer:JsonViewer HorizontalAlignment="Left" Margin="-17,0,0,0" VerticalAlignment="Top" Width="350" Height="375"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="XML">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="55*"/>
+                            <ColumnDefinition Width="1222*"/>
+                        </Grid.ColumnDefinitions>
+                        <local:XMLViewer HorizontalAlignment="Left" VerticalAlignment="Top" Height="433" Width="1267" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </GroupBox>
+    </Grid>
+</UserControl>

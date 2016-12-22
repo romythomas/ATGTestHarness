@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="GalaxyToAir_TestHarness.View.XMLViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:xmlstack="clr-namespace:System.Xml;assembly=System.Xml"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Width="1254" Height="362">
+
+    <UserControl.Resources>
+        <SolidColorBrush Color="Blue" x:Key="xmlValueBrush"/>
+        <SolidColorBrush Color="Red" x:Key="xmAttributeBrush"/>
+        <SolidColorBrush Color="DarkMagenta" x:Key="xmlTagBrush"/>
+        <SolidColorBrush Color="Blue" x:Key="xmlMarkBrush"/>
+
+        <DataTemplate x:Key="attributeTemplate">
+            <StackPanel Orientation="Horizontal" 
+                        Margin="3,0,0,0" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding Path=Name}" 
+                           Foreground="{StaticResource xmAttributeBrush}"/>
+                <TextBlock Text="=&quot;" 
+                           Foreground="{StaticResource xmlMarkBrush}"/>
+                <TextBlock Text="{Binding Path=Value}" 
+                           Foreground="{StaticResource xmlValueBrush}"/>
+                <TextBlock Text="&quot;" 
+                           Foreground="{StaticResource xmlMarkBrush}"/>
+            </StackPanel>
+        </DataTemplate>
+
+        <Style TargetType="{x:Type TreeViewItem}">
+            <Setter Property="IsExpanded" Value="True"/>
+        </Style>
+
+        <HierarchicalDataTemplate x:Key="treeViewTemplate" 
+                                  ItemsSource="{Binding XPath=child::node()}">
+            <StackPanel Orientation="Horizontal" Margin="3,0,0,0" 
+                        HorizontalAlignment="Center">
+                <TextBlock Text="&lt;" HorizontalAlignment="Center" 
+                           Foreground="{StaticResource xmlMarkBrush}" 
+                           x:Name="startTag"/>
+
+                <TextBlock Text="{Binding Path=Name}"
+                    Margin="0"
+                    HorizontalAlignment="Center"
+                    x:Name="xmlTag"
+                    Foreground="{StaticResource xmlTagBrush}"/>
+
+                <ItemsControl
+                    ItemTemplate="{StaticResource attributeTemplate}"
+                    ItemsSource="{Binding Path=Attributes}"
+                    HorizontalAlignment="Center">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+                <TextBlock Text="&gt;" HorizontalAlignment="Center" 
+                           Foreground="{StaticResource xmlMarkBrush}" 
+                           x:Name="endTag"/>
+            </StackPanel>
+
+            <HierarchicalDataTemplate.Triggers>
+                <DataTrigger Binding="{Binding NodeType}">
+                    <DataTrigger.Value>
+                        <xmlstack:XmlNodeType>Text</xmlstack:XmlNodeType>
+                    </DataTrigger.Value>
+                    <Setter Property="Text" Value="{Binding InnerText}" 
+                            TargetName="xmlTag"/>
+                    <Setter Property="Foreground" Value="Blue" 
+                            TargetName="xmlTag"/>
+                    <Setter Property="Visibility" Value="Collapsed" 
+                            TargetName="startTag"/>
+                    <Setter Property="Visibility" Value="Collapsed" 
+                            TargetName="endTag"/>
+                </DataTrigger>
+
+                <DataTrigger Binding="{Binding HasChildNodes}" Value="False">
+                    <Setter Property="Text" Value="/&gt;" TargetName="endTag"/>
+                </DataTrigger>
+            </HierarchicalDataTemplate.Triggers>
+        </HierarchicalDataTemplate>
+    </UserControl.Resources>
+
+    <Grid Margin="12,10,10,10">
+        <TreeView Name="xmlTree" 
+                  ItemTemplate="{StaticResource treeViewTemplate}" HorizontalAlignment="Left" Width="571" Margin="17,31,0,10" ItemsSource="{Binding xmlRequest}">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}" >
+                    <Setter Property="IsExpanded" Value="{Binding xmlRequestTreeExpanded}" />
+                </Style>
+            </TreeView.ItemContainerStyle>
+        </TreeView>
+        <TreeView x:Name="xmlTree_Copy" 
+        	ItemTemplate="{StaticResource treeViewTemplate}" HorizontalAlignment="Left" Width="611" Margin="611,28,0,10" ItemsSource="{Binding xmlResponse}">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}" >
+                    <Setter Property="IsExpanded" Value="False" />
+                </Style>
+            </TreeView.ItemContainerStyle>
+        </TreeView>
+        <Label Content="Request" HorizontalAlignment="Left" Margin="17,1,0,0" VerticalAlignment="Top" Width="70"/>
+        <Label Content="Response" HorizontalAlignment="Left" Margin="613,2,0,0" VerticalAlignment="Top" Width="70"/>
+        <Button Content="Copy" HorizontalAlignment="Left" Margin="77,4,0,0" VerticalAlignment="Top" Width="51" Command="{Binding copyXmlRequest}"/>
+        <Button Content="Copy" HorizontalAlignment="Left" Margin="683,2,0,0" VerticalAlignment="Top" Width="48" Command="{Binding copyXmlResponse}" />
+    </Grid>
+</UserControl>
+
